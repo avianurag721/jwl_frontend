@@ -14,6 +14,14 @@ body {
   background-color: #fff;
 }
 
+
+
 ::-webkit-scrollbar {
   display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  button svg {
+    display:none;
+  }
 }

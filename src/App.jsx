@@ -9,11 +9,12 @@ import Cart from "./pages/Cart";
 
 const App = () => {
   return (
-    <div className=" w-full min-h-screen  ">
+    <div className=" w-full min-h-screen   ">
       <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUpForm />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="product/:id" element={<ProductDetailsPage />} />
       </Routes>

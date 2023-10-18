@@ -28,7 +28,7 @@ const SignUpForm = () => {
     e.preventDefault();
 
     if (!password) {
-      toast.error("Passwords DoF Not Match");
+      toast.error("Passwords Dont Not Match");
       return;
     }
     const signupData = {
@@ -38,38 +38,40 @@ const SignUpForm = () => {
     // console.log("signupData  d", signupData);
     dispatch(signUp(signupData));
     // console.log("aftersubmition signup result ", aftersubmition);/
-    setFormData({
-      userName: "",
-      email: "",
-      password: "",
-    });
-    navigate("/login")
+    // setFormData({
+    //   userName: "",
+    //   email: "",
+    //   password: "",
+    // });
+    navigate("/login");
   };
 
   return (
-    <div className=" flex flex-col justify-center items-center mx-5">
-      <h1 className=" text-4xl mt-5">Sign Up</h1>
+    <div className=" h-screen w-full flex bg-blue-gray-600 flex-col items-center">
+      <h1 className=" text-4xl my-4 ">Sign Up</h1>
       <form
         onSubmit={handleOnSubmit}
-        className="flex justify-center rounded-md bg-slate-600 p-6 mt-10 w-full lg:w-4/12 flex-col gap-y-4"
+        className="flex bg-gray-900 justify-center rounded-md bg-slate-600 p-2 lg:p-6  w-full lg:w-4/12 flex-col gap-y-4"
       >
         {/* handling user type  */}
         <div
-          className={` w-full flex justify-around  items-center bg-slate-800 rounded-full p-2`}
+          className={` w-full flex justify-around text-white bg-black  items-center  rounded-full p-2`}
         >
           <h2
             onClick={() => setUserType("Customer")}
             className={` ${
-              userType === "Customer" ? "bg-slate-300 text-slate-800" : "bg-slate-800 text-slate-300"
-            } w-full cursor-pointer text-black font-bold p-2  lg:px-8 rounded-full`}
+              userType === "Customer"
+                ? " bg-brown-400 text-black"
+                : " text-slate-300"
+            } w-full cursor-pointer  font-bold p-2  lg:px-8 rounded-full`}
           >
             Customer
           </h2>
           <h2
             onClick={() => setUserType("Admin")}
             className={` ${
-              userType === "Admin" ? "bg-slate-300 text-slate-800" : "bg-slate-800 text-slate-300"
-            } w-full cursor-pointer text-black font-bold py-2 px-2 lg:px-8 rounded-full`}
+              userType === "Admin" ? "bg-brown-400 text-black" : " text-white"
+            } w-full cursor-pointer  font-bold py-2 px-2 lg:px-8 rounded-full`}
           >
             Admin
           </h2>
